@@ -4,9 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "babel-jest": "^26.0.1",
     "jest": "^26.0.1"
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.3"
   }
 }
