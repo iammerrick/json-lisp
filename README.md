@@ -2,7 +2,7 @@
 
 JSON Lisp is a Lisp like language that uses JSON arrays to mimic Lisp S-Expressions. This repository is a reference resource to support my article on the topic.
 
-Check out the [JSON Lisp article](https://merrickchristensen.com/articles/json-lisp/) where we implement this langauge together.
+Check out the [JSON Lisp article](https://merrickchristensen.com/articles/json-lisp/) where we implement this language together.
 
 ## Examples
 
