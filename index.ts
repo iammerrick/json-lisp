@@ -24,15 +24,18 @@ const defaultEnvironment = {
   "*": multiplication,
 };
 
+export const parse = (source: string): Json => JSON.parse(source);
+
 export const evaluate = (
   expression: Json,
   environment: Environment = defaultEnvironment
 ) => {
   if (Array.isArray(expression)) {
+    const procedure = expression[0];
     /**
      * Support Special Forms
      */
-    switch (expression[0]) {
+    switch (procedure) {
       case "cond": {
         const cases = expression.slice(1);
 
@@ -78,8 +81,8 @@ export const evaluate = (
         if (result.length === 1) {
           return result[0];
         } else {
-          const operator = result[0];
-          return operator(...result.slice(1));
+          const procedure = result[0];
+          return procedure(...result.slice(1));
         }
       }
     }
@@ -91,8 +94,7 @@ export const evaluate = (
     if (environment.hasOwnProperty(expression)) {
       return environment[expression];
     }
-    {
-      return expression;
-    }
+
+    return expression;
   }
 };
