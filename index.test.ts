@@ -51,6 +51,15 @@ describe("json-lisp", () => {
     expect(evaluate(["if", ["not", true], 2, 1])).toEqual(1);
   });
 
+  it("should flip arguments provided to function", function () {
+    expect(evaluate(["flip", "s", "s", "o", "h"])).toEqual([
+      "h",
+      "o",
+      "s",
+      "s",
+    ]);
+  });
+
   describe("built in environment", () => {
     it("should support addition", () => {
       expect(evaluate(["+", 2, 5, 1, 2])).toEqual(10);
