@@ -36,6 +36,9 @@ export const evaluate = (
      * Support Special Forms
      */
     switch (procedure) {
+      case "flip": {
+        return expression.slice(1).reverse();
+      }
       case "cond": {
         const cases = expression.slice(1);
 
