@@ -16,12 +16,14 @@ const division = (...args) =>
   (args.length === 1 ? [1, args[0]] : args).reduce((x, y) => x / y);
 
 const multiplication = (...args) => args.reduce((x, y) => x * y, 1);
+const modulus = (...args) => args.reduce((x, y) => x % y);
 
 const defaultEnvironment = {
   "+": add,
   "-": subtract,
   "/": division,
   "*": multiplication,
+  "%": modulus,
 };
 
 export const parse = (source: string): Json => JSON.parse(source);

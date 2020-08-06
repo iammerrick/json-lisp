@@ -18,6 +18,14 @@ describe("json-lisp", () => {
     expect(evaluate(["+", 1, ["+", 2, 3]])).toEqual(6);
   });
 
+  it("should return the evaluated result", () => {
+    expect(evaluate(["%", 10, 3])).toEqual(1);
+  });
+
+  it("should support nested evaluation", () => {
+    expect(evaluate(["%", 10, ["+", 2, 1]])).toEqual(1);
+  });
+
   it("should support case analysis with cond", () => {
     expect(evaluate(["cond", [true, 1], [false, 0]])).toEqual(1);
     expect(evaluate(["cond", [false, 1], [false, 0], [true, 3]])).toEqual(3);
