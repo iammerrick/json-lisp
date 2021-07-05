@@ -15,7 +15,7 @@ Check out the [JSON Lisp article](https://merrickchristensen.com/articles/json-l
 ### `if`
 
 ```jsx
-["if", true, ["+", 1, 1] // 2
+["if", true, ["+", 1, 1]]; // 2
 ```
 
 ### `cond` Branching
